@@ -33,8 +33,8 @@ cv2.imshow('Bluring', output_bluring)
 
 #%%
 #Sharping (Keskinleştirme işlemi)
-kernel_sharpen_3 = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
-sharping = cv2.filter2D(output_bluring, -1, kernel_sharpen_3)
+kernel_sharpen = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
+sharping = cv2.filter2D(output_bluring, -1, kernel_sharpen)
 
 cv2.imshow('Sharping', sharping)
 
