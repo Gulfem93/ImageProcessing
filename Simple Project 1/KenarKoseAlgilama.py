@@ -4,14 +4,21 @@ import matplotlib.pyplot as plt
 import numpy as np
 import cv2
 
-img = cv2.imread('panda.jpg')
-
-cv2.imshow('Original Image', img) 
+img = cv2.imread('image.jpeg')
 #cv2.waitKey(0)
 
 #%%
+#Resize Image
+W = 1000.
+height, width, depth = img.shape
+imgScale = W/width
+newX,newY = img.shape[1]*imgScale, img.shape[0]*imgScale
+newimg = cv2.resize(img,(int(newX),int(newY)))
+cv2.imshow("Show by CV2",newimg)
+
+#%%
 #Resmi Gri dönüştürme
-gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+gray_image = cv2.cvtColor(newimg, cv2.COLOR_BGR2GRAY)
 
 cv2.imshow('Grayscale', gray_image) 
 ##cv2.waitKey(0)  
